@@ -1,10 +1,13 @@
 /* Style the header with a grey background and some padding */
-.header {
+
+  .header {
+    /* Add styles for your header container here */
     overflow: hidden;
     background-color: #f1f1f1;
     padding: 20px 10px;
     width:100%;
-    transition: all 0.3s ease;
+    
+    margin-bottom: 20px
   }
   
   /* Style the header links */
@@ -19,10 +22,12 @@
     border-radius: 4px;
   }
   
-  /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+
   .header a.logo {
     font-size: 25px;
     font-weight: bold;
+    padding-right: 100px;
+    padding-left: 50px;
   }
   
   /* Change the background color on mouse-over */
@@ -30,23 +35,35 @@
     background-color: #ddd;
     color: black;
   }
+  .header a.different:hover{
+    background-color: #8c1aff;
+    color: white;
+  }
   
-  /* Style the active/current link*/
+  /* Style the active/current link */
   .header a.active {
-    background-color: dodgerblue;
+    background-color: #8c1aff;
     color: white;
   }
   
   /* Float the link section to the right */
-  .header-right {
+  .header .header-right {
     float: right;
+    background-color: #d9b3ff;
+    border-radius: 12px;
+  }
+  .header .header-left {
+    float: left;
+    
   }
 
 
-.sticky {
+  .sticky {
+  /* Styles for the header when it becomes sticky */
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 1370px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
   /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
