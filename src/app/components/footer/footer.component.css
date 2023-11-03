@@ -1,0 +1,27 @@
+.footer {
+    background-color: black;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    
+  }
+  
+  .footer-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-button {
+    background-color: black;
+    color: gray;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .footer-button:hover {
+    background-color: black;
+    color:white;
+  }

@@ -8,6 +8,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component';
+import { ProductsPageComponent } from './components/products-page/products-page.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,11 +21,17 @@ import { ProductComponent } from './components/product/product.component';
     HeaderComponent,
     FooterComponent,
     CartComponent,
-    ProductComponent
+    //ProductComponent,
+    ProductsPageComponent,
+    LoginComponent,
+    HomepageComponent,
+    SignupComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

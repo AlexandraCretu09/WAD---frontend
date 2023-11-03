@@ -2,11 +2,10 @@
 
   .header {
     /* Add styles for your header container here */
-    overflow: hidden;
+    overflow: auto;
     background-color: #f1f1f1;
-    padding: 20px 10px;
+    padding: 20px 0px;
     width:100%;
-    
     margin-bottom: 20px
   }
   
@@ -50,6 +49,7 @@
   .header .header-right {
     float: right;
     background-color: #d9b3ff;
+    margin-right: 50px;
     border-radius: 12px;
   }
   .header .header-left {
@@ -57,13 +57,12 @@
     
   }
 
-
   .sticky {
   /* Styles for the header when it becomes sticky */
     position: fixed;
     top: 0;
-    width: 1370px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    
   }
 
   /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */

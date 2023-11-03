@@ -7,6 +7,8 @@ import { Component, HostListener  } from '@angular/core';
 })
 
 export class HeaderComponent {
+  
+
   isSticky: boolean = false;
 
   @HostListener('window:scroll', ['$event'])
