@@ -1,0 +1,65 @@
+<body>
+  <div class="login-page">
+    <div class="form">
+      <div class="login">
+        <div class="login-header">
+          <h3>Sign Up</h3>
+          <p>Please enter your credentials to sign up.</p>
+        </div>
+      </div>
+      <form [formGroup]="signupForm" class="login-form" (ngSubmit)="onSubmit()">
+
+
+        <input type="text" formControlName="name" placeholder="Name"/>
+          <div *ngIf="signupForm.get('name')?.touched">
+            <div *ngIf="signupForm.get('name')?.hasError('required')" [ngClass]="{'custom-error-class': true}">
+              Name is required.
+            </div>
+            <div *ngIf="signupForm.get('name')?.hasError('minlength')" [ngClass]="{'custom-error-class': true}">
+              Name must be at least 3 characters.
+            </div>
+            <div *ngIf="signupForm.get('name')?.hasError('nameRequiresSpace')" [ngClass]="{'custom-error-class': true}">
+              Name must contain at least one space.
+            </div>
+          </div>
+
+          <input type="text" formControlName="email" placeholder="Email"/>
+          <div *ngIf="signupForm.get('email')?.touched">
+            <div *ngIf="signupForm.get('email')?.hasError('required')" [ngClass]="{'custom-error-class': true}">
+              Email is required.
+            </div>
+            <div *ngIf="signupForm.get('email')?.hasError('email')" [ngClass]="{'custom-error-class': true}">
+              Invalid email format.
+            </div>
+          </div>
+          
+
+          <input type="password" formControlName="password" placeholder="Password"/>
+          <div *ngIf="signupForm.get('password')?.touched">
+            <div *ngIf="signupForm.get('password')?.hasError('required')" [ngClass]="{'custom-error-class': true}">
+              Password is required.
+            </div>
+            <div *ngIf="signupForm.get('password')?.hasError('minlength')" [ngClass]="{'custom-error-class': true}">
+              Password must be at least 6 characters.
+            </div>
+          </div>
+          
+
+
+        
+          <input type="password" formControlName="confirmPassword" placeholder="Confirm Password"/>
+          <div *ngIf="signupForm.get('confirmPassword')?.touched">
+            <div *ngIf="signupForm.get('confirmPassword')?.hasError('required') || signupForm.hasError('passwordsNotMatching')" 
+              [ngClass]="{'custom-error-class': true}">
+              Passwords do not match.
+            </div>
+          </div>
+          
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+<app-footer></app-footer>

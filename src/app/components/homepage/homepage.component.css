@@ -1,0 +1,79 @@
+.homepage {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .intro {
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 520px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 1) 100%), url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F7112%2Fwoman-typing-writing-windows.jpg%3Fcs%3Dsrgb%26dl%3Dcomputer-desk-email-7112.jpg%26fm%3Djpg&f=1&nofb=1&ipt=7cbbcac0d7ef48715c8e7226bc5ee6b7e6d3c24c6403ed99b62ad1fcecf70577&ipo=images");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .intro h1 {
+    font-family: sans-serif;
+    font-size: 60px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+  .intro p {
+    font-size: 20px;
+    color: #d1d1d1;
+    text-transform: uppercase;
+    margin: 20px 0;
+  }
+  
+  .intro button {
+    background-color: #5edaf0;
+    color: #000;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4)
+  }
+  
+  
+  
+  .about-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 80px;
+    border-top: 2px solid #eeeeee;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  .about-me img {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .about-me-text h2 {
+    font-size: 30px;
+    color: #333333;
+    text-transform: uppercase;
+    margin: 20px;
+  }
+  
+  .about-me-text p {
+    font-size: 20px;
+    color: #585858;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
