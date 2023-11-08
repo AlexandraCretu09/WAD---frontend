@@ -1,17 +1,22 @@
 <nav id="navbar" [ngClass] = "{'sticky': isSticky}">
     <div class="header a">
         
-        <a href="#default" class="logo">CompanyLogo</a>
+        <a href="#default" class="logo">Utena Translations</a>
 
         <div class="header-left">
-            <a routerLink="/homepage" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-            <a routerLink="/products-page" routerLinkActive="active">Products</a>
-            <a routerLink="/cart" routerLinkActive="active">Cart</a>
-            <a href="#about">About</a>
+            <a routerLink="/homepage" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" appScrollToTheTop>Home</a>
+            <a routerLink="/products-page" routerLinkActive="active" appScrollToTheTop>Products</a>
+            <a *ngIf="isAdminVar" routerLink="/adminPage" routerLinkActive="active" appScrollToTheTop>Users Page</a>
+            
         </div>
         <div class="header-right">
-            <a class="different" routerLink="/login" routerLinkActive="active">Log In</a>
-            <a class="different" routerLink="/signup" routerLinkActive="active">Sign Up</a>
+            <div *ngIf="isUserLoggedIn; else loginSignUpLinks">
+                <a class="different" routerLink="/myAccount" routerLinkActive="active" appScrollToTheTop>My Account</a>
+              </div>
+              <ng-template #loginSignUpLinks>
+                <a class="different" routerLink="/login" routerLinkActive="active" appScrollToTheTop>Log In</a>
+                <a class="different" routerLink="/signup" routerLinkActive="active" appScrollToTheTop>Sign Up</a>
+              </ng-template>
             
         </div>
     </div>

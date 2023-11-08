@@ -1,0 +1,54 @@
+<app-header></app-header>
+<body>
+<div class="product">
+  
+    
+    <div class="intro">
+      <h1>Language & Cultural Training</h1>
+      <p>Going beyond language learning is key when it comes to reaching goals and becoming more proactive in international business. Our Language and Cultural Training group works with companies and individuals who want to improve linguistic, communication, and cultural skills in over 16 languages and across all industries.  </p>
+    </div>
+    
+    <div class="body">
+    <h1>Language Training Options</h1>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label for="dropdown1">Select the language to learn:</label>
+      <select formControlName="option1">
+        <option [ngValue]="null" disabled>Select an option</option>
+        <option *ngFor="let option of options" [ngValue]="option">{{ option }}</option>
+        
+      </select>
+      <div *ngIf="form.get('option1')?.hasError('required') && form.get('option1')?.touched">
+          <p class="error-message">Please select a language.</p>
+        </div>
+
+      <label for="dropdown2">Select the proficency level:</label>
+      <select formControlName="option2">
+        <option [ngValue]="null" disabled>Select an option</option>
+        <option *ngFor="let option of profOptions" [ngValue]="option">{{ option }}</option>
+        
+      </select>
+      <div *ngIf="form.get('option2')?.hasError('required') && form.get('option2')?.touched">
+        <p class="error-message">Please select a language.</p>
+      </div>
+
+      <div></div>
+
+      <button type="button" (click)="calculatePrice()">Compute Price</button>
+      <p class="error-message" *ngIf="!isLoggedIn">Please log in.</p>
+
+      <div class="price-result" *ngIf="priceComputed" >
+        <p>Price: {{ computedPrice | currency:'USD' }}</p>
+      </div>
+
+      <button type="submit" *ngIf="priceComputed && isLoggedIn">Submit</button>
+      <div *ngIf="formSubmitted" class="success-message">
+        Form submitted successfully!
+      </div>
+    
+    </form>
+    </div>
+  </div>
+</body>
+<app-footer></app-footer>
+  

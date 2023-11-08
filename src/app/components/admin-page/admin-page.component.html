@@ -1,0 +1,17 @@
+<app-header></app-header>
+<body>
+    <section>
+      <h2>User Accounts</h2>
+      <ul>
+        <li *ngFor="let user of users">
+            {{ user.id }} - {{ user.email }}
+            <button (click)="deleteUser(user)" class="delete-button">Delete Account</button>
+            <button (click)="toggleAdminStatus(user)" class="toggle-admin-button">
+                {{ user.admin === 0 ? 'Promote To Admin' : 'Demote From Admin' }}
+              </button>
+        </li>
+      </ul>
+    </section>
+</body>
+
+<app-footer></app-footer>

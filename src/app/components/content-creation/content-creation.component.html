@@ -1,0 +1,59 @@
+<app-header></app-header>
+<body>
+<div class="product">
+  
+    
+    <div class="intro">
+      <h1>Content Creation</h1>
+      <p>Expanding into new global markets presents a significant growth opportunity for many organizations. But the process of entering and succeeding in new markets can be daunting and time-consuming, particularly when content lives in different places or is managed by different teams. Organizations with global aspirations need a reliable and efficient creation management system to reach customers and audiences abroad.  </p>
+    </div>
+    
+    <div class="body">
+    <h1>Content Creation Options</h1>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label for="dropdown1">Select the language:</label>
+      <select formControlName="option1">
+        <option [ngValue]="null" disabled>Select an option</option>
+        <option *ngFor="let option of langOptions" [ngValue]="option">{{ option }}</option>
+        
+      </select>
+      <div *ngIf="form.get('option1')?.hasError('required') && form.get('option1')?.touched">
+          <p class="error-message">Please select a language.</p>
+        </div>
+
+      <label for="dropdown2">Select the category:</label>
+      <select formControlName="option2">
+        <option [ngValue]="null" disabled>Select an option</option>
+        <option *ngFor="let option of options" [ngValue]="option">{{ option }}</option>
+        
+      </select>
+      <div *ngIf="form.get('option2')?.hasError('required') && form.get('option2')?.touched">
+        <p class="error-message">Please select a category.</p>
+      </div>
+
+
+      <div class="word-count">
+        <label for="wordCount">Enter the number of words:</label>
+        <input type="number" id="wordCount" formControlName="wordCount">
+        <button type="button" (click)="calculatePrice()">Compute Price</button>
+        <p class="error-message" *ngIf="form.get('wordCount')?.invalid && form.get('wordCount')?.touched">Please enter the number of words.</p>
+        <p class="error-message" *ngIf="!isLoggedIn">Please log in.</p>
+      </div>
+    
+
+      <div class="price-result" *ngIf="priceComputed" >
+        <p>Price: {{ computedPrice | currency:'USD' }}</p>
+      </div>
+
+      <button type="submit" *ngIf="priceComputed && isLoggedIn">Submit</button>
+      <div *ngIf="formSubmitted" class="success-message">
+        Form submitted successfully!
+      </div>
+    
+    </form>
+    </div>
+  </div>
+</body>
+<app-footer></app-footer>
+  

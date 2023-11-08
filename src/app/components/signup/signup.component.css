@@ -25,7 +25,7 @@
     background: #f2f2f2;
     width: 100%;
     border: 0;
-    margin: 0 0 15px;
+    margin: 10px 0 0;
     padding: 15px;
     box-sizing: border-box;
     font-size: 14px;
@@ -34,6 +34,7 @@
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
+    margin: 10px 0 0;
     background-color: #328f8a;
     background-image: linear-gradient(45deg,#7300e6,#cc99ff);
     width: 100%;
@@ -68,4 +69,15 @@
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .custom-error-class {
+    color: red; 
+    font-size: small;
+    text-align: left;
+  }
+
+  .success-message {
+    color: green;
+    font-weight: bold;
   }

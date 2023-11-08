@@ -1,4 +1,30 @@
 
+.intro {
+    display: flex;
+    
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 2555, 2555, 0.2) 100%), url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.officelovin.com%2Fwp-content%2Fuploads%2F2017%2F07%2Ftsla-office-1.jpg&f=1&nofb=1&ipt=8fc0cfb12f09435214948e0d5d85fa9f032529dce97670b1abb9b1ced50f99e3&ipo=images");
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-left: 250px;
+    width: 100%;
+    height: 520px;
+  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .intro h1{
+    font-size: 40px;
+  }
+  
+  .intro p{
+    max-width: 30%;
+    font-size: 20px;
+  }
+
 .product-list {
     display: flex;
     flex-wrap: wrap;

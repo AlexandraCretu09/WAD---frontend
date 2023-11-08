@@ -1,15 +1,72 @@
+<app-header></app-header>
+<body>
 <div class="product">
-    <div class="product-image">
-      <img [src]="product.imageUrl" alt="Product Image" />
+  <!--h1>Document Translation</h1-->
+  
+  <div *ngIf="selectedProduct === 'document-translation'">
+    
+    <div class="intro">
+      <h1>Document Translation Services</h1>
+      <p>Connect your customers to your products and services through documentation in their language. Our thorough translation process, from project analysis to production and post-production, as well as our ISO certifications, ensure the highest level of accuracy. GlobalLink, our translation management system, manages all the moving parts that make up the translation process, all while saving you as much as 50% in costs and project time. </p>
     </div>
-    <div class="product-details">
-      <h1>{{ product.name }}</h1>
-      <p class="product-description">{{ product.description }}</p>
-      <p class="product-price">$ {{ product.price }}</p>
-      <div class="product-actions">
-        <!-- Add buttons for adding to cart or other actions -->
-        <!--<button (click)="addToCart()">Add to Cart</button -->
+
+    <div class="body">
+    <h1>File Upload Form</h1>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label for="dropdown1">Select the language to be translated from:</label>
+      <select formControlName="option1">
+        <option [ngValue]="null" disabled>Select an option</option>
+        <option *ngFor="let option of options" [ngValue]="option">{{ option }}</option>
+      </select>
+      <div *ngIf="form.get('option1')?.hasError('required') && form.get('option1')?.touched">
+        <p class="error-message">Please select a language.</p>
       </div>
-    </div>
+    
+      <label for="dropdown2">Select the language to be translated to:</label>
+      <select formControlName="option2">
+        <option [ngValue]="null" disabled>Select an option</option>
+        <option *ngFor="let option of options" [ngValue]="option">{{ option }}</option>
+      </select>
+      <div *ngIf="form.get('option2')?.hasError('required') && form.get('option2')?.touched">
+        <p class="error-message">Please select a language.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="fileInput">Upload a .txt file:</label>
+        <input type="file" id="fileInput" (change)="onFileSelected($event)">
+      </div>
+
+      <div class="word-count">
+        <label for="wordCount">Enter the number of words:</label>
+        <input type="number" id="wordCount" formControlName="wordCount">
+        <button type="button" (click)="computePrice()">Compute Price</button>
+        <p class="error-message" *ngIf="form.get('wordCount')?.invalid && form.get('wordCount')?.touched">Please enter the number of words.</p>
+        <p class="error-message" *ngIf="!isLoggedIn">Please log in.</p>
+      </div>
+    
+      <div class="price-result" *ngIf="priceComputed" >
+        <p>Price: {{ computedPrice | currency:'USD' }}</p>
+      </div>
+      
+      <div *ngIf="selectedFile">
+        <p>Selected file: {{ selectedFile.name }}</p>
+      </div>
+
+      <button type="submit" *ngIf="priceComputed && isLoggedIn">Submit</button>
+      <div *ngIf="formSubmitted" class="success-message">
+        Form submitted successfully!
+      </div>
+      
+    </form>
   </div>
+    
+
+  </div>
+
+  
+
+</div>
+</body>
+<app-footer></app-footer>
   

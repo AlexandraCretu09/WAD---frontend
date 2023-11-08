@@ -9,11 +9,15 @@
               <p>Please enter your credentials to login.</p>
             </div>
           </div>
-          <form class="login-form">
-            <input type="text"  placeholder="Email"/>
-            <input type="password"  placeholder="password"/>
-            <button>login</button>
+          <form class="login-form" (ngSubmit)="onLoginSubmit()">
+            <input type="text"  placeholder="Email" [(ngModel)]="email" name="email"/>
+            <input type="password"  placeholder="password" [(ngModel)]="password" name="password"/>
+            <div *ngIf="errorMessage" class="error-message"  [ngClass]="{'custom-error-class': true}">
+              {{ errorMessage }}
+            </div>
+            <button type="submit">login</button>
             <p class="message">Not registered? <a routerLink="/signup">Create an account</a></p>
+            
           </form>
         </div>
       </div>
