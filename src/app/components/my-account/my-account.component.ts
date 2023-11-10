@@ -78,8 +78,7 @@ export class MyAccountComponent implements OnInit{
     if (email) {
 
       const springBackendUrl = 'http://localhost:8080'; 
-      const endpoint = '/contentCreation';
-      //console.log('Email:', email);
+      const endpoint = '/getContentCreation';
       const observable = this.httpClient.get<oneProduct[]>(`${springBackendUrl}${endpoint}?email=` + email);
       observable.subscribe({
         next: (data) => {
@@ -93,6 +92,8 @@ export class MyAccountComponent implements OnInit{
       
     }
   }
+
+  
 
   /*
   
