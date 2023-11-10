@@ -12,6 +12,15 @@
         </li>
       </ul>
     </section>
+    <section>
+      <h2>Requested Services</h2>
+      <ul>
+        <li *ngFor="let product of products">
+          Client: {{ product.email }} || Service:  {{ product.type }}
+          <button (click)="deleteProduct(product)" class="delete-button">Delete Item</button>
+        </li>
+      </ul>
+    </section>
 </body>
 
 <app-footer></app-footer>
